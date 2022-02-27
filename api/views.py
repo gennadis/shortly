@@ -3,7 +3,7 @@ from rest_framework import permissions
 from rest_framework import generics
 
 from api.models import URL
-from api.serializers import URLSerializer
+from api.serializers import URLSerializer, URLCreationSerializer
 
 
 class ListURLView(generics.ListAPIView):
@@ -13,5 +13,5 @@ class ListURLView(generics.ListAPIView):
 
 
 class CreateURLView(generics.CreateAPIView):
-    serializer_class = URLSerializer
+    serializer_class = URLCreationSerializer
     permission_classes = [permissions.IsAuthenticated]
