@@ -3,6 +3,8 @@ from string import ascii_letters, digits
 
 from django.db import models
 
+from shortly.settings import SHORTLY_BASE_URL
+
 URL_HASH_SYMBOLS = ascii_letters + digits
 URL_HASH_LENGTH = 7
 
@@ -19,6 +21,9 @@ class URL(models.Model):
         verbose_name="Time URL created at",
         auto_now_add=True,
     )
+
+    def get_short_url(self):
+        return f"{SHORTLY_BASE_URL}/{self.hash}"
 
     def save(self, *args, **kwargs):
         if not self.hash:
