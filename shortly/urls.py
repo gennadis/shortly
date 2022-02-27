@@ -19,13 +19,9 @@ from rest_framework import routers
 
 from api import views
 
-router = routers.DefaultRouter()
-router.register(r"urls", views.URLViewSet)
-
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("v1/", include(router.urls)),
+    path("v1/urls/", views.ListURLView.as_view()),
+    path("v1/shorten/", views.CreateURLView.as_view()),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]
