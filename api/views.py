@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from rest_framework import permissions
 from rest_framework import generics
 
@@ -15,3 +15,8 @@ class ListURLView(generics.ListAPIView):
 class CreateURLView(generics.CreateAPIView):
     serializer_class = URLCreationSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+def redirect_from_hash(request, hash):
+    url = get_object_or_404(URL, hash=hash)
+    return redirect(url.long_url)
