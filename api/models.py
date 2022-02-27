@@ -8,7 +8,7 @@ URL_HASH_LENGTH = 7
 
 
 class URL(models.Model):
-    original_url = models.URLField(verbose_name="Original URL")
+    long_url = models.URLField(verbose_name="Original URL")
     hash = models.CharField(
         verbose_name="Original URL hash",
         max_length=20,

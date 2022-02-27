@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name='URL',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('original_url', models.URLField(verbose_name='Original URL')),
+                ('long_url', models.URLField(verbose_name='Original URL')),
                 ('hash', models.CharField(blank=True, max_length=20, null=True, verbose_name='Original URL hash')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Time URL created at')),
             ],
