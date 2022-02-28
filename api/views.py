@@ -12,6 +12,13 @@ class ListURLView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
 
+class DetailURLView(generics.RetrieveAPIView):
+    queryset = URL.objects.all()
+    lookup_field = "hash"
+    serializer_class = URLSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
 class CreateURLView(generics.CreateAPIView):
     serializer_class = URLCreationSerializer
     permission_classes = [permissions.IsAuthenticated]
