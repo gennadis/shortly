@@ -1,3 +1,2 @@
-web: gunicorn dvmn_teams.wsgi
+web: gunicorn shortly.wsgi
 release: python manage.py migrate
-api: python manage.py runserver
