@@ -7,7 +7,24 @@ This REST API service brings long URLs shortening and redirectioning from hashed
 - Hashed to original URL redirection
 - Half-end hash customization
 - URLs validation
-- Heroku ready!
+
+## Run with `Docker`
+1. Clone project
+```bash
+https://github.com/gennadis/shortly.git
+cd shortly
+```
+
+2. Build the image
+```bash
+docker-compose build
+```
+
+3. Run the container
+```bash
+docker-compose up -d
+```
+
 
 ## Installation
 1. Clone project
